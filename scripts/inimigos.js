@@ -1,7 +1,7 @@
 const width_azuring = 105;
 const height_azuring = 105;
-const width_bungisngis = 170;
-const height_bungisngis = 170;
+const width_nidhoggers = 185;
+const height_nighoggers = 310;
 
 class Azuring{
     constructor(imagem){
@@ -36,23 +36,19 @@ class Azuring{
     }
 }
 
-class Bungisngis{
+class Nidhoggers{
     constructor(imagem){
         this.imagem = imagem;
         this.matriz = [
-            [0, 340],
-            [170, 340],
-            [340, 340],
-            [510, 340],
-            [680, 340],
-            [850, 340],
+            //185, 310
+            [0, 0],
         ];
         this.pontoMatrizAtual = 0;
-        this.imageWidth = 170;
-        this.imageHeight = 170;
+        this.imageWidth = 185;
+        this.imageHeight = 310;
     }
     exibe(){
-        image(this.imagem, width - 275, height - 170, width_bungisngis, height_bungisngis, this.matriz[this.pontoMatrizAtual][0], this.matriz[this.pontoMatrizAtual][1], this.imageWidth, this.imageHeight);
+        image(this.imagem, width - 185, height - 310, width_nidhoggers, height_nighoggers, this.matriz[this.pontoMatrizAtual][0], this.matriz[this.pontoMatrizAtual][1], this.imageWidth, this.imageHeight);
         this.animacao();
     }
     animacao(){
