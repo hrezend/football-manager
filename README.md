@@ -35,6 +35,7 @@ No entanto, há algumas diferenças entre o projeto original e o apresentado nes
 
 O projeto foi desenvolvido utilizando as seguintes tecnologias
 
+- [HTML](https://developer.mozilla.org/pt-BR/docs/Web/HTML)
 - [JavaScript](https://www.javascript.com/)
 - [P5JS](https://p5js.org/)
 
@@ -55,9 +56,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 2. Executando a Aplicação:
 
 ```sh
-  $ Abra a pasta do jogo com o VSCode.
+  $ Com o VSCode, abra a pasta que você clonou.
   $ Procure o arquivo "index.html".
-  $ Execute o arquivo citado acima sob auxílio da ferramenta do Live Server.
+  $ Execute o arquivo citado acima com o Live Server.
 ```
   
 
