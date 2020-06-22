@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="#">
+    <img alt="Logo" title="#logo" width="300px" src="images/assets/alura.png">
     <br>
     <b>Ragnarok | Forever</b>  
     <br>
@@ -10,7 +10,7 @@
     <img alt="Made by Alura" src="https://img.shields.io/badge/Made%20By-Alura-blue">
   </a>
   <a>
-    <img alt="License MIT" src="https://img.shields.io/badge/license-MIT-blue">
+    <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
   <br><br>
 </p>
 
@@ -54,9 +54,11 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 2. Executando a Aplicação:
 
-  # 1º - Abra a pasta do jogo com o VSCode.
-  # 2º - Procure o arquivo "index.html".
-  # 3º - Execute o arquivo citado acima sob auxílio da ferramenta do Live Server.
+```sh
+  $ Abra a pasta do jogo com o VSCode.
+  $ Procure o arquivo "index.html".
+  $ Execute o arquivo citado acima sob auxílio da ferramenta do Live Server.
+```
   
 
 <a id="como-contribuir"></a>
@@ -70,7 +72,7 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 ## :mortar_board: Quem ministrou?
 
-As aulas foram ministradas pelo CEO da Caelum, **[Paulo Silveira](https://twitter.com/paulo_caelum)**, pela instrutora do Alura, **[Juliana Negreiros](https://twitter.com/juunegreiros)**, e pelo intrutor do Alura, **[Guilherme Lima](https://twitter.com/guilhermebzlima)**, nas aulas da **Imersão GameDev Alura**.
+As aulas foram ministradas pelo CEO da Caelum, **[Paulo Silveira](https://twitter.com/paulo_caelum)**, pela instrutora do Alura, **[Juliana Negreiros](https://twitter.com/juunegreiros)**, e pelo instrutor do Alura, **[Guilherme Lima](https://twitter.com/guilhermebzlima)**, nas aulas da **Imersão GameDev Alura**.
 
 ## :memo: License
 
