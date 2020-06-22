@@ -7,10 +7,10 @@ let personagem;
 let trilhaSonora;
 
 function preload(){
-  imagemCenario = loadImage('imagens/cenario/floresta.png');
-  imagemPersonagem = loadImage('imagens/personagem/witch.png');
-  imagemAzuring = loadImage('imagens/inimigos/azuring.png');
-  trilhaSonora = loadSound('sons/theme_of_prontera.mp3');
+  imagemCenario = loadImage('../images/cenario/floresta.png');
+  imagemPersonagem = loadImage('../images/personagem/witch.png');
+  imagemAzuring = loadImage('../images/inimigos/azuring.png');
+  trilhaSonora = loadSound('../sounds/theme_of_prontera.mp3');
 }
 
 function setup(){
