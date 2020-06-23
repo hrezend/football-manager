@@ -1,33 +1,34 @@
 let imagemCenario;
-let imagemHypista;
 let imagemLoki;
-let imagemNidhoggers;
 let imagemEvilFanatic;
 let cenario;
-let hypista;
 let loki;
-let niddhoggers;
 let evil_fanatic;
-let trilhaSonora;
+let soundGame;
+let soundJump
 
 function preload(){
-  imagemCenario = loadImage('../images/cenario/floresta.png');
-  imagemHypista = loadImage('../images/personagem/hypista/sprite.png');
+  imagemCenario = loadImage('../images/cenario/cenario.png');
   imagemLoki = loadImage('../images/personagem/loki/walking.png');
-  imagemNidhoggers = loadImage('../images/inimigos/nidhoggers_shadow/flying.png');
   imagemEvilFanatic = loadImage('../images/inimigos/evil_fanatic/walking.png')
-  trilhaSonora = loadSound('../sounds/theme_of_prontera.mp3');
+  soundGame = loadSound('../sounds/theme_of_prontera.mp3');
+  soundJump = loadSound('../sounds/effect_jump.mp3');
 }
 
 function setup(){
   createCanvas(windowWidth, windowHeight);
-  cenario = new Cenario(imagemCenario, 10);
-  hypista = new Hypista(imagemHypista);
-  loki = new Loki(imagemLoki);
-  nidhoggers = new Nidhoggers(imagemNidhoggers);
-  evil_fanatic = new EvilFanatic(imagemEvilFanatic);
-  trilhaSonora.loop();
-  frameRate(10);
+  cenario = new Cenario(imagemCenario, 7);
+  loki = new Hero(matriz_loki, imagemLoki, 0, 100, 105, 100, 105);
+  evil_fanatic = new Enemy(matriz_evil_fanatic, imagemEvilFanatic, width - 250, 165, 180, 195, 250);
+  soundGame.loop();
+  frameRate(30);
+}
+
+function keyPressed(){
+  if(key === 'ArrowUp'){
+    soundJump.play();
+    loki.jump();
+  }
 }
 
 function draw(){
@@ -35,10 +36,14 @@ function draw(){
   cenario.exibe();
   cenario.move();
   //Exibe e faz o efeito de movimentação do nosso herói
-  loki.exibe();
-  loki.animacao();
+  loki.show();
+  loki.gravit();
   //Exibe e faz o efeito de movimentação dos monstros
-  nidhoggers.exibe();
-  nidhoggers.animacao();
+  evil_fanatic.show();
+  evil_fanatic.walk();
+
+  if(loki.colliding(evil_fanatic)){
+    hoLoop();
+  }
 
 }
