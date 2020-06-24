@@ -1,7 +1,7 @@
 class Enemy extends Animacao{
     constructor(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite){
         super(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite);
-        this.velocidade = 15;
+        this.velocidade = 25;
     }
     walk(){
         this.x = this.x - this.velocidade;

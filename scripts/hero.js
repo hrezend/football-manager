@@ -40,4 +40,7 @@ class Hero extends Animacao{
         );
         return collid;
     }
+    attack(){
+        
+    }
 }
