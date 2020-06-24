@@ -3,11 +3,13 @@ let imagemCenario;
 let imagemLoki;
 let imagemEvilFanatic;
 let imagemNidhoggers;
+let imagemFacewoormQueen;
+let imagemLordOfDeath;
+let imagemPyuriel;
+let imagemDaehyon;
 //Instancias
 let cenario;
 let loki;
-let evil_fanatic;
-let nidhoggers;
 let pontuacao;            
 //Efeitos Sonoros
 let soundGame;
@@ -24,6 +26,10 @@ function preload(){
   imagemLoki = loadImage('../images/personagem/loki/walking.png');
   imagemEvilFanatic = loadImage('../images/inimigos/evil_fanatic/walking.png');
   imagemNidhoggers = loadImage('../images/inimigos/nidhoggers_shadow/flying.png');
+  imagemFacewoormQueen = loadImage('../images/inimigos/faceworm_queen/walking.png');
+  imagemLordOfDeath = loadImage('../images/inimigos/lord_of_death/walking.png');
+  imagemPyuriel = loadImage('../images/inimigos/pyuriel/walking.png');
+  imagemDaehyon = loadImage('../images/inimigos/daehyon/walking.png');
   soundGame = loadSound('../sounds/theme_of_prontera.mp3');
   soundJump = loadSound('../sounds/effect_jump.mp3');
   soundAttack = loadSound('../sounds/effect_attack.mp3');
@@ -36,11 +42,19 @@ function setup(){
   loki = new Hero(matriz_loki, imagemLoki, 0, 20, 100, 105, 100, 105);
   const evil_fanatic = new Enemy(matriz_evil_fanatic, imagemEvilFanatic, width, -10, 165, 180, 195, 250, 50, 100);
   const nidhoggers = new Enemy(matriz_nidhoggers, imagemNidhoggers, width, 10, 190, 310, 186, 310, 30, 100);
+  const faceworm_queen = new Enemy(matriz_faceworm_queen, imagemFacewoormQueen, width, 10, 180, 125, 180, 125, 40, 100);
+  const lord_of_death = new Enemy(matriz_lord_of_death, imagemLordOfDeath, width, 10, 185, 225, 185, 225, 30, 100);
+  const pyuriel = new Enemy(matriz_pyuriel, imagemPyuriel, width, 10, 105, 135, 105, 135, 30, 100);
+  const daehyon = new Enemy(matriz_daehyon, imagemDaehyon, width, 10, 85, 144, 85, 144, 30, 100);
   soundGame.loop();
-  frameRate(15);
+  frameRate(5);
 
-  enemies.push(evil_fanatic);
-  enemies.push(nidhoggers);
+  //enemies.push(evil_fanatic);
+  //enemies.push(nidhoggers);
+  //enemies.push(faceworm_queen);
+  //enemies.push(lord_of_death);
+  //enemies.push(pyuriel);
+  //enemies.push(daehyon);
   randomEnemy = Math.floor(Math.random() * enemies.length);
 }
 

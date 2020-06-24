@@ -24,9 +24,9 @@ class Hero extends Animacao{
         }
     }
     colliding(enemy){
-        noFill();
-        ellipse(this.largura/2, this.y*1.12, this.largura);
-        ellipse(enemy.x/0.5, enemy.y*1.3, enemy.largura);
+        //noFill();
+        //ellipse(this.largura/2, this.y*1.12, this.largura);
+        //ellipse(enemy.x/0.5, enemy.y*1.3, enemy.largura);
         const collid = collideCircleCircle(
             this.largura/2,
             this.y*1.12,
