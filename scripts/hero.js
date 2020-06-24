@@ -1,7 +1,8 @@
 class Hero extends Animacao{
-    constructor(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite){
-        super(matriz, imagem, x, largura, altura, larguraSprite, alturaSprite);
-        this.yBase = height - this.altura;
+    constructor(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite){
+        super(matriz, imagem, x, variacaoY, largura, altura, larguraSprite, alturaSprite);
+        this.variacaoY = variacaoY;
+        this.yBase = height - this.altura - this.variacaoY;
         this.y = this.yBase;
         this.gravity = 3;
         this.speedJump = 0;
@@ -23,20 +24,16 @@ class Hero extends Animacao{
         }
     }
     colliding(enemy){
-        const precision_height = 0.9;
-        const precision_width = 0.5;
-        //noFill();
-        //rect(this.x, this.y, this.largura * precision_width, this.altura * precision_height);
-        //rect(enemy.x, enemy.y, enemy.largura * precision_width, enemy.altura * precision_height);
-        const collid = collideRectRect(
-            this.x,
-            this.y,
-            this.largura * precision_width,
-            this.altura * precision_height,
-            enemy.x,
-            enemy.y,
-            enemy.largura * precision_width,
-            enemy.altura * precision_height,
+        noFill();
+        ellipse(this.largura/2, this.y*1.12, this.largura);
+        ellipse(enemy.x/0.5, enemy.y*1.3, enemy.largura);
+        const collid = collideCircleCircle(
+            this.largura/2,
+            this.y*1.12,
+            this.largura,
+            enemy.x/0.5,
+            enemy.y*1.3,
+            enemy.largura,
         );
         return collid;
     }
