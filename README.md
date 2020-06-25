@@ -18,7 +18,7 @@
 
 - [Sobre](#sobre)
 - [Tecnologias Utilizadas](#tecnologias-utilizadas)
-- [Como Usar](#como-usar)
+- [Como Jogar](#como-jogar)
 - [Como Contribuir](#como-contribuir)
 
 <a id="sobre"></a>
@@ -28,6 +28,8 @@
 Este projeto foi realizado através da <strong>Imersão GameDev 2020</strong>, proporcionado gratuitamente pela [Alura](htts://alura.com.br).
 
 No entanto, há algumas diferenças entre o projeto original e o apresentado nesse repositório, já que, tomando como inspiração o mundo de Ragnarok, um jogo que fez parte da minha infancia, acabei remasterizando este projeto com base no Ragnarok.
+
+O jogo se trata de um endless runner, onde você ganha pontos desviando e matando inimigos, e perde se sua pontuação chegar a 0. Conforme você vai acumulando pontos, novos monstros vão surgindo, de forma aleatória, mais rápido ou mais devagar que outros.
 
 <a id="tecnologias-utilizadas"></a>
 
@@ -39,9 +41,9 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - [JavaScript](https://www.javascript.com/)
 - [P5JS](https://p5js.org/)
 
-<a id="como-usar"></a>
+<a id="como-jogar"></a>
 
-## :fire: Como usar
+## :fire: Como jogar
 
 - ### **Pré-requisitos**
 
