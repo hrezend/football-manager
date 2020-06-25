@@ -2,6 +2,9 @@ class Punctuation{
     constructor(){
         this.points = 0;
     }
+    progress(){
+        return this.points;
+    }
     show(){
         fill('#FFF');
         textAlign(RIGHT);
@@ -10,10 +13,16 @@ class Punctuation{
     }
     incrementPoints(){
         if(this.points < 500){
-            this.points = this.points + 0.1;
-        }
-        else if(this.points < 1000){
             this.points = this.points + 0.2;
+        }
+        else if(this.points > 500 && this.points < 1000){
+            this.points = this.points + 0.3;
+        }
+        else if(this.points > 1000 && this.points < 2000){
+            this.points = this.points + 0.4;
+        }
+        else if(this.points > 2000){
+            this.points = this.points + 0.5;
         }
     }
     decrementPoints(amount){
