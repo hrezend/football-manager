@@ -1,7 +1,7 @@
 <h3 align="center">
     <img alt="Logo" title="#logo" width="300px" src="images/assets/print_aula1.png">
     <br>
-    <b>Ragnarok | Forever</b>  
+    <b>Endless Runnerok</b>  
     <br>
 </h3>
 
