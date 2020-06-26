@@ -1,15 +1,22 @@
 function preload(){
     soundMenu = loadSound('../sounds/main_theme.mp3');
     soundProntera = loadSound('../sounds/theme_of_prontera.mp3');
+    soundFlorest = loadSound('../sounds/peaceful_forest.mp3');
+    soundIce = loadSound('../sounds/theme_of_lutie.mp3');
     soundMorocc = loadSound('../sounds/theme_of_morocc.mp3');
     soundJump = loadSound('../sounds/effect_jump.mp3');
     soundAttack = loadSound('../sounds/effect_attack.mp3');
     fontGame = loadFont('../fonts/PressStart2P-Regular.ttf');
+    imagemLife = loadImage('../images/items/life.png');
+    //Imagens das fases
     imagemSetupOne = loadImage('../images/cenario/setupOne.png');
     imagemSetupTwoBack = loadImage('../images/cenario/setupTwoBack.png');
     imagemSetupTwoTree = loadImage('../images/cenario/setupTwoTree.png');
     imagemSetupTwoVegetation = loadImage('../images/cenario/setupTwoVegetation.png');
     imagemSetupTwoAir = loadImage('../images/cenario/setupTwoAir.png');
+    imagemSetupThree = loadImage('../images/cenario/setupThree.png');
+    imagemSetupFour = loadImage('../images/cenario/setupFour.png');
+    //
     imagemMenu = loadImage('../images/cenario/menu.jpg');
     imagemGameOver = loadImage('../images/assets/gameOver.png');
     imagemLoki = loadImage('../images/personagem/loki/walking.png');
@@ -27,4 +34,9 @@ function preload(){
     imagemStormyKnight = loadImage('../images/inimigos/stormy_knight/walking.png');
     imagemValkyrieRandgris = loadImage('../images/inimigos/valkyrie_randgris/walking.png');
     imagemNaghtSieger = loadImage('../images/inimigos/naght_sieger/walking.png');
+    imagemAqua3 = loadImage('../images/inimigos/aqua3/walking.png');
+    imagemAgni3 = loadImage('../images/inimigos/agni3/walking.png');
+    imagemMaya = loadImage('../images/inimigos/maya/walking.png');
+    imagemEddga = loadImage('../images/inimigos/eddga/walking.png');
+    imagemKtullanux = loadImage('../images/inimigos/ktullanux/walking.png');
 }

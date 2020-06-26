@@ -8,6 +8,7 @@ class Hero extends Animacao{
         this.speedJump = 0;
         this.jumpHeight = 35;
         this.amount_jumps = 0;
+        this.invencivel = false;
     }
     jump(){
         if(this.amount_jumps != 2){
@@ -27,6 +28,9 @@ class Hero extends Animacao{
         //noFill();
         //ellipse(this.largura/2, this.y*1.12, this.largura);
         //ellipse(enemy.x/0.5, enemy.y*1.3, enemy.largura);
+        if(this.invencivel){
+            return false;
+        }
         const collid = collideCircleCircle(
             this.largura/2,
             this.y*1.12,
@@ -36,6 +40,12 @@ class Hero extends Animacao{
             enemy.largura,
         );
         return collid;
+    }
+    invincibility(){
+        this.invencivel = true;
+        setTimeout(() => {
+            this.invencivel = false;
+        }, 1000);
     }
     attack(){
         

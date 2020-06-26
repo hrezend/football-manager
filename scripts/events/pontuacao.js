@@ -12,18 +12,7 @@ class Punctuation{
         text(parseInt(this.points), width-30, 50);
     }
     incrementPoints(){
-        if(this.points < 500){
-            this.points = this.points + 0.2;
-        }
-        else if(this.points > 500 && this.points < 1000){
-            this.points = this.points + 0.3;
-        }
-        else if(this.points > 1000 && this.points < 2000){
-            this.points = this.points + 0.4;
-        }
-        else if(this.points > 2000){
-            this.points = this.points + 0.5;
-        }
+        this.points = this.points + 0.5;
     }
     decrementPoints(amount){
         this.amount = amount;

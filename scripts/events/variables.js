@@ -15,6 +15,11 @@ let imagemMemoryOfThanatos;
 let imagemStormyKnight;
 let imagemValkyrieRandgris;
 let imagemNaghtSieger;
+let imagemAqua3;
+let imagemAgni3;
+let imagemEddga;
+let imagemMaya;
+let imagemKtullanux;
 
 //Images Scenes
 let imagemSetupOne;
@@ -22,6 +27,7 @@ let imagemSetupTwoTree;
 let imagemSetupTwoBack;
 let imagemSetupTwoVegetation;
 let imagemSetupTwoAir;
+let imagemSetupFour;
 //Instancias
 let cenario;
 let scene_two_tree;
@@ -32,6 +38,8 @@ let loki;
 let pontuacao;            
 //Efeitos Sonoros
 let soundProntera;
+let soundIce;
+let soundFlorest;
 let soundMorocc;
 let soundMenu;
 let soundJump;
@@ -39,9 +47,13 @@ let soundAttack;
 //Fonts
 let fontGame;
 //Helper Functions
+let imagemLife;
+let life;
 let delay_music;
 let buttonMenuToFaseOne;
 let buttonFaseOneToFaseTwo;
+let buttonFaseTwoToFaseThree;
+let buttonFaseThreeToFaseFour;
 let cenas;
 let cenaAtual = 'menu';
 let randomEnemy;
@@ -70,6 +82,54 @@ const matriz_naght_sieger = [
 ];
 
 //Mob's
+const matriz_ktullanux = [
+    [0, 0],
+    [170, 0],
+    [340, 0],
+    [515, 0],
+    [690, 0],
+    [855, 0],
+    [1030, 0],
+];
+
+const matriz_eddga = [
+    [0, 0],
+    [102, 0],
+    [200, 0],
+    [300, 0],
+    [400, 0],
+    [498, 0],
+];
+
+const matriz_maya = [
+    [0, 0],
+    [173, 0],
+    [346, 0],
+    [514, 0],
+    [680, 0],
+    [842, 0],
+];
+
+const matriz_agni3 = [
+    [0, 0],
+    [92, 0],
+    [188, 0],
+    [282, 0],
+    [378, 0],
+    [467, 0],
+];
+
+const matriz_aqua3 = [
+    [0, 0],
+    [92, 0],
+    [181, 0],
+    [282, 0],
+    [373, 0],
+    [470, 0],
+    [566, 0],
+    [660, 0],
+];
+
 const matriz_evil_fanatic = [
     [0, 0],
     [248, 0],
