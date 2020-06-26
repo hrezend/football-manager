@@ -1,14 +1,29 @@
 <!DOCTYPE html><html lang="en">
-    <head>
-        <meta charset="utf-8">
-        <link rel="stylesheet" type="text/css" href="styles/style.css">
-        <title>Endless Runnerok</title>
-    </head>
-    <body>
-        <main class="menu-container">
-            <h1 class="title-game">Endless Runnerok</h1>
-            <a class="link-new-game" href="start.html"><h3>New Game</h3></a>
-            <img class="img-game" src="images/assets/gifStart.gif" alt="Valkyrie">
-        </main>
-    </body>
+  <head>
+    <meta charset="utf-8">
+    <script src="engineer/p5.js"></script>
+    <script src="engineer/p5.sound.min.js"></script>
+    <script src="engineer/p5.collide2d.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="styles/style.css">
+    <link rel="icon" type="" href="images/assets/icon.png">
+    <title>Endless Runnerok</title>
+  </head>
+  <body>
+    <div id="p5_loading" class="loadingclass loadingcustom">
+      <img src="images/assets/gifLoading.gif" class="img-loading">
+      <h10 class="text-loading">Aguarde!</h10>
+    </div>
+    <script src="scripts/events/pontuacao.js"></script>
+    <script src="scripts/events/variables.js"></script>
+    <script src="scripts/events/load.js"></script>
+    <script src="scripts/events/buttons.js"></script>
+    <script src="scripts/events/menu.js"></script>
+    <script src="scripts/fases/faseOne.js"></script>
+    <script src="scripts/fases/faseTwo.js"></script>
+    <script src="scripts/models/animacao.js"></script>
+    <script src="scripts/models/enemies.js"></script>
+    <script src="scripts/models/hero.js"></script>
+    <script src="scripts/models/cenario.js"></script>
+    <script src="engineer/sketch.js"></script>
+  </body>
 </html>
