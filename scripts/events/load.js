@@ -6,6 +6,8 @@ function preload(){
     soundMorocc = loadSound('../sounds/theme_of_morocc.mp3');
     soundJump = loadSound('../sounds/effect_jump.mp3');
     soundAttack = loadSound('../sounds/effect_attack.mp3');
+    soundGameOver = loadSound('../sounds/effect_game_over.mp3');
+    soundDamage = loadSound('../sounds/effect_damage.mp3');
     fontGame = loadFont('../fonts/PressStart2P-Regular.ttf');
     imagemLife = loadImage('../images/items/life.png');
     //Imagens das fases
