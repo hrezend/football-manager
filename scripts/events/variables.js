@@ -30,12 +30,16 @@ let imagemSetupTwoBack;
 let imagemSetupTwoVegetation;
 let imagemSetupTwoAir;
 let imagemSetupFour;
+let imagemSetupThreeFront;
+let imagemSetupThreeBack;
 //Instancias
 let cenario;
 let scene_two_tree;
 let scene_two_vegetation;
 let scene_two_back;
 let scene_two_air;
+let scene_three_back;
+let scene_three_front;
 let loki;
 let pontuacao;            
 //Efeitos Sonoros

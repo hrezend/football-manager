@@ -19,7 +19,8 @@ function preload(){
     imagemSetupTwoTree = loadImage('../images/cenario/setupTwoTree.png');
     imagemSetupTwoVegetation = loadImage('../images/cenario/setupTwoVegetation.png');
     imagemSetupTwoAir = loadImage('../images/cenario/setupTwoAir.png');
-    imagemSetupThree = loadImage('../images/cenario/setupThree.png');
+    imagemSetupThreeFront = loadImage('../images/cenario/setupThreeFront.png');
+    imagemSetupThreeBack = loadImage('../images/cenario/setupThreeBack.png');
     imagemSetupFour = loadImage('../images/cenario/setupFour.png');
     //
     imagemMenu = loadImage('../images/cenario/menu.jpg');

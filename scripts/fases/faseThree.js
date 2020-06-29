@@ -10,16 +10,17 @@ class FaseThree{
     setup(){
         soundMorocc.stop();
         soundIce.loop();
-        cenario = new Cenario(imagemSetupThree, 7);
+        scene_three_back = new Cenario(imagemSetupThreeBack, 5);
+        scene_three_front = new Cenario(imagemSetupThreeFront, 10);
         pontuacao = new Punctuation();
         buttonFaseThreeToFaseFour = new ButtonFaseThreeToFaseFour('Click to Fase 4', 0, 0);
         bonus = new Bonuses(matriz_items, imagemItems, width, height/7 * 5, 53, 100, 105, 200, 100, 3000);
         life = new Life(3, 3);
-        loki = new Hero(matriz_loki, imagemLoki, 0, 20, 100, 105, 100, 105);
-        const hatii = new Enemy(matriz_hatii, imagemHatii, width, 8, 125, 110, 125, 110, 30, 100);
-        const stormy_knight = new Enemy(matriz_stormy_knight, imagemStormyKnight, width, 10, 140, 135, 140, 135, 30, 100);
-        const aqua3 = new Enemy(matriz_aqua3, imagemAqua3, width, 10, 92, 150, 92, 150, 20, 100);
-        const ktullanux = new Enemy(matriz_ktullanux, imagemKtullanux, width, 8, 167, 100, 167, 100, 25, 100);
+        loki = new Hero(matriz_loki, imagemLoki, 0, 50, 100, 105, 100, 105);
+        const hatii = new Enemy(matriz_hatii, imagemHatii, width, 28, 125, 110, 125, 110, 30, 100);
+        const stormy_knight = new Enemy(matriz_stormy_knight, imagemStormyKnight, width, 40, 140, 135, 140, 135, 30, 100);
+        const aqua3 = new Enemy(matriz_aqua3, imagemAqua3, width, 25, 92, 150, 92, 150, 20, 100);
+        const ktullanux = new Enemy(matriz_ktullanux, imagemKtullanux, width, 25, 167, 100, 167, 100, 25, 100);
         enemies.length = 0;
         enemies.push(ktullanux);
         enemies.push(hatii);
@@ -29,8 +30,10 @@ class FaseThree{
     }
     draw(){
         enemy_time = enemies[randomEnemy];
-        cenario.exibe();
-        cenario.move();
+        scene_three_back.exibe();
+        scene_three_back.move();
+        scene_three_front.exibe();
+        scene_three_front.move();
         life.draw();
         pontuacao.show();
         pontuacao.incrementPoints();
