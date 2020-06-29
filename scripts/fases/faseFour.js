@@ -1,11 +1,9 @@
 class FaseFour{
     keyPressed(key){
         if(key === 'ArrowUp'){
-            soundJump.play();
             loki.jump();
         }
         if(key === 'CapsLock'){
-            soundAttack.play();
             loki.attack();
         }
     }
@@ -39,10 +37,13 @@ class FaseFour{
         enemy_time.show();
         enemy_time.walk();  
         if(loki.colliding(enemy_time)){
+            soundDamage.play();
             pontuacao.decrementPoints(5);
             life.loseLife();
             loki.invincibility();
             if(life.qtd_vidas === 0){
+                soundFlorest.stop();
+                soundGameOver.play();
                 image(imagemGameOver, width/2 - 200, height/3);
                 noLoop();
                 alert('Você perdeu todas as suas vidas e fez ' + pontuacao.progress() + ' pontos!');

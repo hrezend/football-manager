@@ -12,6 +12,7 @@ class Hero extends Animacao{
     }
     jump(){
         if(this.amount_jumps != 2){
+            soundJump.play();
             this.speedJump =- this.jumpHeight;
             this.amount_jumps++;
         }
@@ -48,6 +49,6 @@ class Hero extends Animacao{
         }, 1000);
     }
     attack(){
-        
+        soundAttack.play();
     }
 }

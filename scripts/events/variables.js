@@ -44,6 +44,8 @@ let soundMorocc;
 let soundMenu;
 let soundJump;
 let soundAttack;
+let soundDamage;
+let soundGameOver;
 //Fonts
 let fontGame;
 //Helper Functions
