@@ -1,8 +1,6 @@
 class Menu{
     keyPressed(key){
-        if(keyPressed === 'Enter'){
-            console.log('Iniciar');
-        }
+        console.log('Nothing here yet...');
     }
     setup(){
         soundMenu.loop();
@@ -24,7 +22,7 @@ class Menu{
         text('Runnerok', width/2, height / 5 * 3);
     }
     _button(){
-        buttonMenuToFaseOne.y = height / 7 * 5;
-        buttonMenuToFaseOne.draw();
+        buttonMenuToInstructions.y = height / 7 * 5;
+        buttonMenuToInstructions.draw();
     }
 }

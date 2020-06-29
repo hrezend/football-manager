@@ -6,7 +6,7 @@ class Punctuation{
         return this.points;
     }
     show(){
-        fill('#FFF');
+        fill('#00594f');
         textAlign(RIGHT);
         textSize(50);
         text(parseInt(this.points), width-30, 50);

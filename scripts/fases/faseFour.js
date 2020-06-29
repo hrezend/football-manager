@@ -47,15 +47,11 @@ class FaseFour{
                 image(imagemGameOver, width/2 - 200, height/3);
                 noLoop();
                 alert('Você perdeu todas as suas vidas e fez ' + pontuacao.progress() + ' pontos!');
-                alert('Press F5 to restart in fase 1!');
+                alert('Press F5 to return to the beginning!');
             }
         }
         if(enemy_time.passed()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
-        }
-        if(pontuacao.progress() >= 1000){
-            alert('Parabéns, você atingiu 1000 pontos e zerou o jogo.');
-            noLoop();
         }
     }
 }

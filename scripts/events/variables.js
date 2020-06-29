@@ -1,5 +1,6 @@
 //Images Enemies
 let imagemMenu;
+let imagemInstructions;
 let imagemLoki;
 let imagemEvilFanatic;
 let imagemNidhoggers;
@@ -42,6 +43,7 @@ let soundIce;
 let soundFlorest;
 let soundMorocc;
 let soundMenu;
+let soundInstructions;
 let soundJump;
 let soundAttack;
 let soundDamage;

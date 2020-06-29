@@ -1,5 +1,6 @@
 function preload(){
     soundMenu = loadSound('../sounds/main_theme.mp3');
+    soundInstructions = loadSound('../sounds/main_theme.mp3');
     soundProntera = loadSound('../sounds/theme_of_prontera.mp3');
     soundFlorest = loadSound('../sounds/peaceful_forest.mp3');
     soundIce = loadSound('../sounds/theme_of_lutie.mp3');
@@ -20,6 +21,7 @@ function preload(){
     imagemSetupFour = loadImage('../images/cenario/setupFour.png');
     //
     imagemMenu = loadImage('../images/cenario/menu.jpg');
+    imagemInstructions = loadImage('../images/cenario/instructions.jpg');
     imagemGameOver = loadImage('../images/assets/gameOver.png');
     imagemLoki = loadImage('../images/personagem/loki/walking.png');
     imagemEvilFanatic = loadImage('../images/inimigos/evil_fanatic/walking.png');

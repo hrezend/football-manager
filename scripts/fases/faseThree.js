@@ -38,7 +38,7 @@ class FaseThree{
         enemy_time.show();
         enemy_time.walk();  
         if(loki.colliding(enemy_time)){
-            soundDamage.play().
+            soundDamage.play();
             pontuacao.decrementPoints(5);
             life.loseLife();
             loki.invincibility();
@@ -48,16 +48,11 @@ class FaseThree{
                 image(imagemGameOver, width/2 - 200, height/3);
                 noLoop();
                 alert('Você perdeu todas as suas vidas e fez ' + pontuacao.progress() + ' pontos!');
-                alert('Press F5 to restart in fase 1!');
+                alert('Press F5 to return to the beginning!');
             }
         }
         if(enemy_time.passed()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
-        }
-        if(pontuacao.progress() >= 1000){
-            alert('Parabéns, você atingiu 1000 pontos e foi obrigado passar de fase.');
-            cenaAtual = 'fase4';
-            fase4.setup();
         }
         this._button();
     }

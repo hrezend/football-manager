@@ -61,7 +61,7 @@ class FaseTwo{
                 image(imagemGameOver, width/2 - 200, height/3);
                 noLoop();
                 alert('Você perdeu todas as suas vidas e fez ' + pontuacao.progress() + ' pontos!');
-                alert('Press F5 to restart in fase 1!');
+                alert('Press F5 to return to the beginning!');
             }
         }
         if(enemy_time.passed()){
