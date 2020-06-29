@@ -29,7 +29,7 @@ Este projeto foi realizado através da <strong>Imersão GameDev 2020</strong>, p
 
 No entanto, há algumas diferenças entre o projeto original e o apresentado nesse repositório, já que, tomando como inspiração o mundo de Ragnarok, um jogo que fez parte da minha infancia, acabei remasterizando este projeto com base no Ragnarok.
 
-O jogo se trata de um endless runner, onde você ganha pontos desviando e matando inimigos, e perde se sua pontuação chegar a 0. Conforme você vai acumulando pontos, novos monstros vão surgindo, de forma aleatória, mais rápido ou mais devagar que outros.
+O jogo se trata de um endless runner, onde você ganha pontos desviando e matando inimigos, e perde se perder todas as suas vidas. Sinta-se livre para mudar de mapa quando quiser, e então novos monstros e objetivos aparecerão!
 
 <a id="tecnologias-utilizadas"></a>
 
@@ -49,10 +49,10 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
   - Talvez seja **necessário** possuir o **[Live Server](https://www.npmjs.com/package/live-server)** instalado na máquina. Você também pode instalar o mesmo, como uma extensão para o Visual Studio Code, o que torna o processo muito mais fácil e simplificado.
 
-1. Faça um clone do repositório:
+1. Faça um clone deste repositório:
 
 ```sh
-  $ git clone https://github.com/hrezend/rag-forever
+  $ git clone https://github.com/hrezend/hrezend.github.io
 ```
 
 2. Executando a Aplicação:
@@ -72,10 +72,6 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 - Crie uma branch com a sua feature: `git checkout -b my-feature`
 - Commit suas mudanças: `git commit -m 'feat: My new feature'`
 - Push a sua branch: `git push origin my-feature`
-
-## :mortar_board: Quem ministrou?
-
-As aulas foram ministradas pelo CEO da Caelum, **[Paulo Silveira](https://twitter.com/paulo_caelum)**, pela instrutora do Alura, **[Juliana Negreiros](https://twitter.com/juunegreiros)**, e pelo instrutor do Alura, **[Guilherme Lima](https://twitter.com/guilhermebzlima)**, nas aulas da **Imersão GameDev Alura**.
 
 ## :memo: License
 
