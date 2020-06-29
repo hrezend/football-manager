@@ -13,6 +13,7 @@ class FaseThree{
         cenario = new Cenario(imagemSetupThree, 7);
         pontuacao = new Punctuation();
         buttonFaseThreeToFaseFour = new ButtonFaseThreeToFaseFour('Click to Fase 4', 0, 0);
+        bonus = new Bonuses(matriz_items, imagemItems, width, height/7 * 5, 53, 100, 105, 200, 100, 3000);
         life = new Life(3, 3);
         loki = new Hero(matriz_loki, imagemLoki, 0, 20, 100, 105, 100, 105);
         const hatii = new Enemy(matriz_hatii, imagemHatii, width, 8, 125, 110, 125, 110, 30, 100);
@@ -35,8 +36,11 @@ class FaseThree{
         pontuacao.incrementPoints();
         loki.show();
         loki.gravit();
+        bonus.show();
+        bonus.walk();
         enemy_time.show();
-        enemy_time.walk();  
+        enemy_time.walk();
+
         if(loki.colliding(enemy_time)){
             soundDamage.play();
             pontuacao.decrementPoints(5);
@@ -51,6 +55,13 @@ class FaseThree{
                 alert('Press F5 to return to the beginning!');
             }
         }
+
+        if(loki.collecting(bonus)){
+            loki.collecting_cdd();
+            soundCollect.play();
+            life.incrementLife();
+        }
+
         if(enemy_time.passed()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
         }

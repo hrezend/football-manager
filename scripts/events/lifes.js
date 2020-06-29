@@ -15,7 +15,7 @@ class Life{
             image(imagemLife, posicao + margem, this.yInicial, this.largura, this.altura);
         }
     }
-    gainLife(){
+    incrementLife(){
         if(this.qtd_vidas < this.total){
             this.qtd_vidas++;
         }

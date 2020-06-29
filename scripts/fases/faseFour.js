@@ -14,6 +14,7 @@ class FaseFour{
         pontuacao = new Punctuation();
         life = new Life(3, 3);
         loki = new Hero(matriz_loki, imagemLoki, 0, 20, 100, 105, 100, 105);
+        bonus = new Bonuses(matriz_items, imagemItems, width, height/7 * 5, 53, 100, 105, 200, 100, 3000);
         const faceworm_queen = new Enemy(matriz_faceworm_queen, imagemFacewoormQueen, width, 10, 180, 125, 180, 125, 30, 100);
         const maya = new Enemy(matriz_maya, imagemMaya, width, 10, 134, 172, 134, 172, 30, 100);
         const agni = new Enemy(matriz_agni3, imagemAgni3, width, 10, 90, 144, 90, 144, 25, 100);
@@ -34,8 +35,11 @@ class FaseFour{
         pontuacao.incrementPoints();
         loki.show();
         loki.gravit();
+        bonus.show();
+        bonus.walk();
         enemy_time.show();
-        enemy_time.walk();  
+        enemy_time.walk();
+
         if(loki.colliding(enemy_time)){
             soundDamage.play();
             pontuacao.decrementPoints(5);
@@ -50,6 +54,13 @@ class FaseFour{
                 alert('Press F5 to return to the beginning!');
             }
         }
+
+        if(loki.collecting(bonus)){
+            loki.collecting_cdd();
+            soundCollect.play();
+            life.incrementLife();
+        }
+
         if(enemy_time.passed()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
         }

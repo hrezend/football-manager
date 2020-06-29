@@ -9,6 +9,7 @@ class Hero extends Animacao{
         this.jumpHeight = 35;
         this.amount_jumps = 0;
         this.invencivel = false;
+        this.coletou = false;
     }
     jump(){
         if(this.amount_jumps != 2){
@@ -42,11 +43,34 @@ class Hero extends Animacao{
         );
         return collid;
     }
+    collecting(bonus){
+        //noFill();
+        //ellipse(this.largura/2, this.y*1.12, this.largura);
+        //ellipse(bonus.x, bonus.y, bonus.largura);
+        if(this.coletou || life.qtd_vidas === life.total){
+            return false;
+        }
+        const collect = collideCircleCircle(
+            this.largura/2,
+            this.y*1.12,
+            this.largura,
+            bonus.x,
+            bonus.y,
+            bonus.largura,
+        );
+        return collect;
+    }
     invincibility(){
         this.invencivel = true;
         setTimeout(() => {
             this.invencivel = false;
         }, 1000);
+    }
+    collecting_cdd(){
+        this.coletou = true;
+        setTimeout(() => {
+            this.coletou = false;
+        }, 10000);
     }
     attack(){
         soundAttack.play();

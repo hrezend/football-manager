@@ -1,6 +1,7 @@
 //Images Enemies
 let imagemMenu;
 let imagemInstructions;
+let imagemItems;
 let imagemLoki;
 let imagemEvilFanatic;
 let imagemNidhoggers;
@@ -48,11 +49,13 @@ let soundJump;
 let soundAttack;
 let soundDamage;
 let soundGameOver;
+let soundCollect;
 //Fonts
 let fontGame;
 //Helper Functions
 let imagemLife;
 let life;
+let bonus;
 let delay_music;
 let buttonMenuToFaseOne;
 let buttonFaseOneToFaseTwo;
@@ -64,6 +67,15 @@ let randomEnemy;
 let enemy_time;
 const enemies = [];
 
+
+//Items
+const matriz_items = [
+    //[157, 0],
+    [370, 0],
+    //[260, 0],
+    //[475, 0],
+    //[580, 0]
+];
 
 //Hero do Jogo
 const matriz_loki = [

@@ -16,6 +16,7 @@ class FaseOne{
         pontuacao = new Punctuation();
         life = new Life(3, 3);
         loki = new Hero(matriz_loki, imagemLoki, 0, 20, 100, 105, 100, 105);
+        bonus = new Bonuses(matriz_items, imagemItems, width, height/7 * 5, 53, 100, 105, 200, 100, 3000);
         const evil_fanatic = new Enemy(matriz_evil_fanatic, imagemEvilFanatic, width, 10, 190, 160, 190, 160, 60, 100);
         const lord_of_death = new Enemy(matriz_lord_of_death, imagemLordOfDeath, width, 10, 185, 225, 185, 225, 30, 100);
         const pyuriel = new Enemy(matriz_pyuriel, imagemPyuriel, width, 10, 105, 135, 105, 135, 30, 100);
@@ -35,10 +36,13 @@ class FaseOne{
         life.draw();
         pontuacao.show();
         pontuacao.incrementPoints();
+        bonus.show();
+        bonus.walk();
         loki.show();
         loki.gravit();
         enemy_time.show();
-        enemy_time.walk();  
+        enemy_time.walk();
+
         if(loki.colliding(enemy_time)){
             soundDamage.play();
             pontuacao.decrementPoints(5);
@@ -53,6 +57,13 @@ class FaseOne{
                 alert('Press F5 to return to the beginning!');
             }
         }
+        
+        if(loki.collecting(bonus)){
+            loki.collecting_cdd();
+            soundCollect.play();
+            life.incrementLife();
+        }
+
         if(enemy_time.passed()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
         }

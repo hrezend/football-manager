@@ -11,6 +11,7 @@ class FaseTwo{
         soundProntera.stop();
         soundMorocc.loop();
         buttonFaseTwoToFaseThree = new ButtonFaseTwoToFaseThree('Click to Fase 3', 0, 0);
+        bonus = new Bonuses(matriz_items, imagemItems, width, height/7 * 5, 53, 100, 105, 200, 100, 3000);
         scene_two_tree = new Cenario(imagemSetupTwoTree, 7);
         scene_two_vegetation = new Cenario(imagemSetupTwoVegetation, 7);
         scene_two_back = new Cenario(imagemSetupTwoBack, 4);
@@ -50,6 +51,9 @@ class FaseTwo{
         scene_two_vegetation.exibe();
         scene_two_vegetation.move();
         life.draw();
+        bonus.show();
+        bonus.walk();
+
         if(loki.colliding(enemy_time)){
             soundDamage.play();
             pontuacao.decrementPoints(5);
@@ -64,13 +68,15 @@ class FaseTwo{
                 alert('Press F5 to return to the beginning!');
             }
         }
+
+        if(loki.collecting(bonus)){
+            loki.collecting_cdd();
+            soundCollect.play();
+            life.incrementLife();
+        }
+
         if(enemy_time.passed()){
             randomEnemy = Math.floor(Math.random() * enemies.length);
-        }
-        if(pontuacao.progress() >= 1000){
-            alert('Parabéns, você atingiu 1000 pontos e foi obrigado passar de fase.');
-            cenaAtual = 'fase3';
-            fase3.setup();
         }
         this._button();
     }

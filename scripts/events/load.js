@@ -9,8 +9,10 @@ function preload(){
     soundAttack = loadSound('../sounds/effect_attack.mp3');
     soundGameOver = loadSound('../sounds/effect_game_over.mp3');
     soundDamage = loadSound('../sounds/effect_damage.mp3');
+    soundCollect = loadSound('../sounds/effect_collect.mp3');
     fontGame = loadFont('../fonts/PressStart2P-Regular.ttf');
     imagemLife = loadImage('../images/items/life.png');
+    imagemItems = loadImage('../images/items/potions.png');
     //Imagens das fases
     imagemSetupOne = loadImage('../images/cenario/setupOne.png');
     imagemSetupTwoBack = loadImage('../images/cenario/setupTwoBack.png');
