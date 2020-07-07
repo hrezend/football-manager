@@ -47,12 +47,14 @@ O projeto foi desenvolvido utilizando as seguintes tecnologias
 
 - ### **Pré-requisitos**
 
+  - Você pode jogar on-line em: (https://hrezend.github.io/endless-runnerok/), ou:
+
   - Talvez seja **necessário** possuir o **[Live Server](https://www.npmjs.com/package/live-server)** instalado na máquina. Você também pode instalar o mesmo, como uma extensão para o Visual Studio Code, o que torna o processo muito mais fácil e simplificado.
 
 1. Faça um clone deste repositório:
 
 ```sh
-  $ git clone https://github.com/hrezend/hrezend.github.io
+  $ git clone https://github.com/hrezend/hrezend.github.io/endless-runnerok/
 ```
 
 2. Executando a Aplicação:
