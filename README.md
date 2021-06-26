@@ -56,7 +56,7 @@ Este projeto foi realizado com o intuito de entregar uma interface prática e fu
 
 ## :memo: License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE.md) para mais detalhes.
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
