@@ -1,5 +1,5 @@
 <h3 align="center">
-    <img alt="Logo" title="#logo" width="300px" src="extras/fm.png">
+    <img alt="Logo" title="#logo" width="200px" src="images/fm.png">
     <br>
     <b>Football Manager</b>  
     <br>
@@ -10,7 +10,7 @@
     <img alt="Made by hrezend" src="https://img.shields.io/badge/Made%20By-hrezend-blue">
   </a>
   <a>
-    <img alt="License MIT" src="https://img.shields.io/badge/License-MIT-blue">
+    <img alt="License MIT" src="https://img.shields.io/badge/License-XXX-blue">
   <br><br>
 </p>
 
@@ -41,7 +41,7 @@ Este projeto foi realizado com o intuito de entregar uma interface prática e fu
 2. Executando a Aplicação:
 
 ```sh
-  $ Em breva...
+  $ Em breve...
 ```
   
 
@@ -56,7 +56,7 @@ Este projeto foi realizado com o intuito de entregar uma interface prática e fu
 
 ## :memo: License
 
-Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
+Esse projeto está sob a licença ###. Veja o arquivo [LICENSE](LICENSE) para mais detalhes.
 
 ---
 
