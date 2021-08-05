@@ -34,6 +34,7 @@ export class ManagerMigration1628097348143 implements MigrationInterface{
                     {
                         name: "type",
                         type: "number",
+                        default: 1,
                     }
                 ]
             })

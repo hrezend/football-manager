@@ -16,14 +16,17 @@ export class ChangelogsMigration1628099698600 implements MigrationInterface{
                     {
                         name: "manager_id",
                         type: "uuid",
+                        isNullable: true,
                     },
                     {
                         name: "object_id",
                         type: "uuid",
+                        isNullable: true,
                     },
                     {
                         name: "description",
-                        type: "varchar"
+                        type: "varchar",
+                        isNullable: true,
                     },
                     {
                         name: "created_at",

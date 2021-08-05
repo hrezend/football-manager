@@ -1,5 +1,5 @@
 import { getCustomRepository, Repository } from "typeorm";
-import { AppError } from '../errors/AppError';
+import { AppError } from '../utils/errors/AppError';
 import { Team } from "../entities/Team";
 import { TeamRepository } from "../repositories/TeamRepository";
 

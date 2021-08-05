@@ -26,10 +26,10 @@ describe('Manager', () => {
         });
 
         expect(response.status).toBe(201);
-        expect(response.body).toHaveProperty('id');
+        expect(response.body).toHaveProperty('message');
     });
 
-    it('Should not be able to create a user with exists email', async () => {
+    it('Should not be able to create a manager with exists email', async () => {
         const response = await request(app).post('/manager/create').set('Authorization', 'a1b2c3-d4e5f6-g7h8i9').send({
             email: 'fulano@email.com.br',
             login: 'fulano',

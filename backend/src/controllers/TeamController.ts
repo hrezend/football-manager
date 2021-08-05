@@ -13,7 +13,7 @@ class TeamController{
         const manager_id = request.headers.authorization;
         const changelog = await changelogService.create({description, manager_id, object_id: team.id});
 
-        return response.status(201).json(team);
+        return response.status(201).json({message: "A team was created with success."});
     }
 
     async showAllTeams(request: Request, response: Response) : Promise<Response>{

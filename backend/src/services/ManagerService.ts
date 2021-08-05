@@ -1,14 +1,14 @@
 import { getCustomRepository, Repository } from "typeorm";
-import { AppError } from '../errors/AppError';
+import { AppError } from '../utils/errors/AppError';
 import { Manager } from "../entities/Manager";
 import { ManagerRepository } from "../repositories/ManagerRepository";
 
 interface IManager{
-    name: string,
-    email: string,
-    login: string,
-    password: string,
-    type: Number
+    name: string;
+    email: string;
+    login: string;
+    password: string;
+    type: Number;
 }
 
 class ManagerService{

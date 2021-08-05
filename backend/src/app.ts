@@ -3,7 +3,7 @@ import "express-async-errors";
 import createConnection from './database';
 import express, { Request, Response, NextFunction } from 'express';
 import { router } from './routes';
-import { AppError } from './errors/AppError';
+import { AppError } from './utils/errors/AppError';
 
 createConnection();
 const app = express();

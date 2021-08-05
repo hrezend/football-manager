@@ -1,5 +1,5 @@
 import { getCustomRepository, Repository } from "typeorm";
-import { AppError } from '../errors/AppError';
+import { AppError } from '../utils/errors/AppError';
 import { Changelog } from "../entities/Changelog";
 import { ChangelogRepository } from "../repositories/ChangelogRepository";
 
