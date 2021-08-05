@@ -1,19 +1,17 @@
-import { Entity, Column, PrimaryColumn, CreateDateColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, CreateDateColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
-import {Manager} from "./Manager";
 
-@Entity("managers")
+@Entity("changelogs")
 class Changelog{
 
     @PrimaryColumn()
     readonly id: string;
 
     @Column()
-    manager_id: string;
+    object_id: string;
 
-    @ManyToOne(()=> Manager)
-    @JoinColumn({name: "manager_id"})
-    manager: Manager;
+    @Column()
+    manager_id: string;
 
     @Column()
     description: string;

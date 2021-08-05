@@ -1,4 +1,4 @@
-import {MigrationInterface, QueryRunner, Table} from "typeorm";
+import {MigrationInterface, QueryRunner, Table, TableForeignKey} from "typeorm";
 
 export class ChangelogsMigration1628099698600 implements MigrationInterface{
 
@@ -18,25 +18,19 @@ export class ChangelogsMigration1628099698600 implements MigrationInterface{
                         type: "uuid",
                     },
                     {
+                        name: "object_id",
+                        type: "uuid",
+                    },
+                    {
                         name: "description",
                         type: "varchar"
                     },
                     {
-                        name: "created_ad",
+                        name: "created_at",
                         type: "timestamp",
                         default: "now()",
                     },
                 ],
-                foreignKeys: [
-                    {
-                        name: "fk_manager",
-                        referencedTableName: "managers",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["manager_id"],
-                        onDelete: "CASCADE",
-                        onUpdate: "CASCADE",
-                    }
-                ]
             })
         );
     }

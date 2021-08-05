@@ -20,25 +20,17 @@ class ManagerService{
     }
 
     async create({name, email, login, password, type}:IManager){
-        const emailAlreadyUsing = await this.managerRepository.findOne({email});
-        const loginAlreadyUsing = await this.managerRepository.findOne({login});
+        const alreadyExists = await this.managerRepository.findOne({email, login});
 
-        if(emailAlreadyUsing){
-            throw new AppError("Manager already using this email.", 400);
-        }
-        if(loginAlreadyUsing){
-            throw new AppError("Manager already using this login.", 400);
+        if(alreadyExists){
+            throw new AppError("This e-mail addres or login already exists.", 400);
         }
 
         const manager = this.managerRepository.create({name, email, login, password, type});
         await this.managerRepository.save(manager);
         return manager;
     }
-
-    async showAllManagers(){
-        const allManagers = await this.managerRepository.find();
-        return allManagers;
-    }
+    
 }
 
 export { ManagerService }

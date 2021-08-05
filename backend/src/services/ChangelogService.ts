@@ -5,8 +5,8 @@ import { ChangelogRepository } from "../repositories/ChangelogRepository";
 
 interface IChangelog{
     description: string;
-    created_at: Date;
     manager_id: string;
+    object_id: string;
 }
 
 class ChangelogService{
@@ -17,8 +17,8 @@ class ChangelogService{
         this.changelogRepository = getCustomRepository(ChangelogRepository);
     }
 
-    async create({description, manager_id, created_at}:IChangelog){
-        const changelog = this.changelogRepository.create({description, manager_id, created_at});
+    async create({description, manager_id, object_id}:IChangelog){
+        const changelog = this.changelogRepository.create({description, manager_id, object_id});
         await this.changelogRepository.save(changelog);
         return changelog;
     }
