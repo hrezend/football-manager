@@ -2,6 +2,7 @@ import { getCustomRepository, Repository } from "typeorm";
 import { AppError } from '../utils/errors/AppError';
 import { Player } from "../entities/Player";
 import { PlayerRepository } from "../repositories/PlayerRepository";
+import { nameValidator, cpfValidator, dateValidator } from '../utils/validators/Validators';
 
 interface IPlayer{
     name: string;
@@ -24,7 +25,11 @@ class PlayerService{
             throw new AppError("This player already exists.", 400);
         }
 
-        const player = this.playerRepository.create({name, cpf, birth_date});
+        const nameValidatted = nameValidator(name);
+        const cpfValidatted = cpfValidator(cpf);
+        const dateValidatted = dateValidator(birth_date);
+
+        const player = this.playerRepository.create({name: nameValidatted, cpf: cpfValidatted, birth_date: dateValidatted});
         await this.playerRepository.save(player);
         return player;
     }
