@@ -44,7 +44,7 @@ describe('Player', () => {
             birth_date: '01/01/1500',
         });
 
-        expect(response.status).toBe(500);
+        expect(response.status).toBe(400);
     });
 
 });

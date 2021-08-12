@@ -31,6 +31,7 @@ class PlayerService{
 
         const player = this.playerRepository.create({name: nameValidatted, cpf: cpfValidatted, birth_date: dateValidatted});
         await this.playerRepository.save(player);
+        
         return player;
     }
     
