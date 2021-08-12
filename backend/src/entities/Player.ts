@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn, JoinColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryColumn, JoinColumn, ManyToOne } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity("players")
@@ -13,8 +13,8 @@ class Player{
     @Column()
     readonly cpf: string;
 
-    @CreateDateColumn()
-    birth_date: Date;
+    @Column()
+    birth_date: string;
 
     constructor(){
         if(!this.id){

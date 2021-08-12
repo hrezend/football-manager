@@ -22,14 +22,9 @@ export class TeamPlayerMigration1628786769636 implements MigrationInterface {
                         type: "uuid",
                     },
                     {
-                        name: "created_at",
-                        type: "timestamp",
-                        default: "now()",
-                    },
-                    {
                         name: "started_at",
                         type: "timestamp",
-                        isNullable: true,
+                        default: "now()",
                     },
                     {
                         name: "finished_at",

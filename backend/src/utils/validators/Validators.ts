@@ -22,7 +22,7 @@ function nameValidator(name: string){
     return nameFormatted;
 }
 
-function dateValidator(date: Date){
+function dateValidator(date: string){
     return date;
 }
 

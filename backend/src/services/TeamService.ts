@@ -5,7 +5,7 @@ import { TeamRepository } from "../repositories/TeamRepository";
 
 interface ITeam{
     name: string;
-    founded_at: Date;
+    founded_at: string;
 }
 
 class TeamService{

@@ -1,4 +1,4 @@
-import { Entity, Column, PrimaryColumn, JoinColumn, ManyToMany, CreateDateColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, JoinColumn, ManyToMany, CreateDateColumn, UpdateDateColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 import { Player } from './Player';
 import { Team } from './Team';
@@ -24,12 +24,9 @@ class TeamPlayer{
     player_id: string;
 
     @CreateDateColumn()
-    created_at: Date;
-
-    @CreateDateColumn()
     started_at: Date;
 
-    @CreateDateColumn()
+    @UpdateDateColumn()
     finished_at: Date;
 
     @Column()

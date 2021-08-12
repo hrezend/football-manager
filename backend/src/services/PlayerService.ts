@@ -7,7 +7,7 @@ import { nameValidator, cpfValidator, dateValidator } from '../utils/validators/
 interface IPlayer{
     name: string;
     cpf: string;
-    birth_date: Date;
+    birth_date: string;
 }
 
 class PlayerService{

@@ -1,4 +1,4 @@
-import { Entity, Column, CreateDateColumn, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
 
 @Entity("teams")
@@ -10,8 +10,8 @@ class Team{
     @Column()
     name: string;
 
-    @CreateDateColumn()
-    founded_at: Date;
+    @Column()
+    founded_at: string;
 
     constructor(){
         if(!this.id){

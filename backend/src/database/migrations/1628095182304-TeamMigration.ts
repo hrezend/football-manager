@@ -19,7 +19,8 @@ export class TeamMigration1628095182304 implements MigrationInterface{
                     },
                     {
                         name: "founded_at",
-                        type: "timestamp",
+                        type: "varchar",
+                        isNullable: true,
                     },
                 ]
             })

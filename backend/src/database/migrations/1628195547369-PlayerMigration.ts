@@ -24,7 +24,8 @@ export class PlayerMigration1628195547369 implements MigrationInterface {
                     },
                     {
                         name: "birth_date",
-                        type: "timestamp"
+                        type: "varchar",
+                        isNullable: true,
                     }
                 ]
             })
