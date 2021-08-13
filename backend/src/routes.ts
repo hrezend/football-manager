@@ -10,6 +10,7 @@ const router = Router();
 const teamController = new TeamController();
 router.get('/teams', teamController.showAllTeams);
 router.post('/team/create', teamController.create);
+router.post('/team/players', teamController.showPlayersOfATeam);
 
 const playerController = new PlayerController();
 router.get('/players', playerController.showAllPlayers);
@@ -18,7 +19,6 @@ router.post('/player/create', playerController.create);
 const teamPlayerController = new TeamPlayerController();
 router.post('/team/player/bind', teamPlayerController.bindTeamPlayer);
 router.post('/team/player/unbind', teamPlayerController.unbindTeamPlayer);
-router.post('/team/players', teamPlayerController.showPlayersOfATeam);
 
 const managerController = new ManagerController();
 router.post('/manager/create', managerController.create);

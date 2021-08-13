@@ -16,6 +16,14 @@ class TeamController{
 
         return response.status(200).json(allTeams);
     }
+
+    async showPlayersOfATeam(request: Request, response: Response) : Promise<Response>{
+        const { team_id } = request.body;
+        const teamService = new TeamService();
+        const players = await teamService.showPlayersOfATeam(team_id);
+
+        return response.status(200).json(players);
+    }
     
 }
 

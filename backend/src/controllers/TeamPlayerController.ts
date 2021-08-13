@@ -19,14 +19,6 @@ class TeamPlayerController{
 
         return response.status(200).json({message: "This player was unbind."});
     }
-
-    async showPlayersOfATeam(request: Request, response: Response) : Promise<Response>{
-        const { team_id } = request.body;
-        const teamPlayerService = new TeamPlayerService();
-        const players = await teamPlayerService.showPlayersOfATeam(team_id);
-
-        return response.status(200).json(players);
-    }
     
 }
 

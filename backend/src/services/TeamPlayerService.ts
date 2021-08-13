@@ -37,12 +37,6 @@ class TeamPlayerService{
         return teamPlayer;
     }
 
-    async showPlayersOfATeam(team_id: string){
-        const activePlayers = await this.teamPlayerRepository.find({team_id, active: true});
-
-        return activePlayers;
-    }
-
 }
 
 export { TeamPlayerService }
