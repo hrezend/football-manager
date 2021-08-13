@@ -16,6 +16,7 @@ class TeamController{
 
         return response.status(200).json(allTeams);
     }
+    
 }
 
 export { TeamController }

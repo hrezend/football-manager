@@ -35,6 +35,11 @@ class PlayerService{
         return player;
     }
     
+    async showAllPlayers(){
+        const allPlayers = await this.playerRepository.find();
+        return allPlayers;
+    }
+
 }
 
 export { PlayerService }

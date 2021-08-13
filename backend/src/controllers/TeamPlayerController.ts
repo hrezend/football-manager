@@ -3,10 +3,10 @@ import { TeamPlayerService } from '../services/TeamPlayerService';
 
 class TeamPlayerController{
 
-    async create(request: Request, response: Response) : Promise<Response>{
+    async bindTeamPlayer(request: Request, response: Response) : Promise<Response>{
         const { team_id, player_id } = request.body;
         const teamPlayerService = new TeamPlayerService();
-        const teamPlayer = await teamPlayerService.create(player_id, team_id);
+        const teamPlayer = await teamPlayerService.bindTeamPlayer(player_id, team_id);
 
         return response.status(201).json({message: "A bind was created with success.", teamPlayer});
     }
@@ -18,6 +18,14 @@ class TeamPlayerController{
         await teamPlayerService.unbindTeamPlayer(id, player_id, team_id);
 
         return response.status(200).json({message: "This player was unbind."});
+    }
+
+    async showPlayersOfATeam(request: Request, response: Response) : Promise<Response>{
+        const { team_id } = request.body;
+        const teamPlayerService = new TeamPlayerService();
+        const players = await teamPlayerService.showPlayersOfATeam(team_id);
+
+        return response.status(200).json(players);
     }
     
 }

@@ -2,6 +2,7 @@ import { getCustomRepository, Repository } from "typeorm";
 import { AppError } from '../utils/errors/AppError';
 import { TeamPlayerRepository } from "../repositories/TeamPlayerRepository";
 import { TeamPlayer } from "../entities/TeamPlayer";
+import { Player } from "../entities/Player";
 
 class TeamPlayerService{
 
@@ -11,9 +12,9 @@ class TeamPlayerService{
         this.teamPlayerRepository = getCustomRepository(TeamPlayerRepository);
     }
 
-    async create(player_id: string, team_id: string){
-
+    async bindTeamPlayer(player_id: string, team_id: string){
         const playerIsActive = await this.teamPlayerRepository.findOne({player_id, active: true});
+
         if(playerIsActive){
             throw new AppError("This player is active at some team! Unbind him first.", 400);
         }
@@ -25,8 +26,8 @@ class TeamPlayerService{
     }
 
     async unbindTeamPlayer(id: string, player_id: string, team_id: string){
-
         const playerIsActive = await this.teamPlayerRepository.findOne({player_id, active: true});
+        
         if(!playerIsActive){
             throw new AppError("This player is available for hire.", 400);
         }
@@ -35,6 +36,13 @@ class TeamPlayerService{
     
         return teamPlayer;
     }
+
+    async showPlayersOfATeam(team_id: string){
+        const activePlayers = await this.teamPlayerRepository.find({team_id, active: true});
+
+        return activePlayers;
+    }
+
 }
 
 export { TeamPlayerService }

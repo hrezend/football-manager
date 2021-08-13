@@ -8,15 +8,17 @@ import { TeamPlayerController } from './controllers/TeamPlayerController';
 const router = Router();
 
 const teamController = new TeamController();
+router.get('/teams', teamController.showAllTeams);
 router.post('/team/create', teamController.create);
-router.get('/team/list/all', teamController.showAllTeams);
 
 const playerController = new PlayerController();
+router.get('/players', playerController.showAllPlayers);
 router.post('/player/create', playerController.create);
 
 const teamPlayerController = new TeamPlayerController();
-router.post('/teamplayer/create', teamPlayerController.create);
-router.post('/teamplayer/unbind', teamPlayerController.unbindTeamPlayer);
+router.post('/team/player/bind', teamPlayerController.bindTeamPlayer);
+router.post('/team/player/unbind', teamPlayerController.unbindTeamPlayer);
+router.post('/team/players', teamPlayerController.showPlayersOfATeam);
 
 const managerController = new ManagerController();
 router.post('/manager/create', managerController.create);

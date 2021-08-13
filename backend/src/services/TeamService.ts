@@ -32,6 +32,7 @@ class TeamService{
         const allTeams = await this.teamRepository.find();
         return allTeams;
     }
+
 }
 
 export { TeamService }
