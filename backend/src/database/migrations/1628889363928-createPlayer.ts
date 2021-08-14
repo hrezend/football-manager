@@ -1,11 +1,11 @@
-import { MigrationInterface, QueryRunner, Table } from "typeorm";
+import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class ManagerMigration1628097348143 implements MigrationInterface{
+export class createPlayer1628889363928 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void>{
         await queryRunner.createTable(
             new Table({
-                name: "managers",
+                name: "player",
                 columns: [
                     {
                         name: "id",
@@ -18,23 +18,27 @@ export class ManagerMigration1628097348143 implements MigrationInterface{
                         type: "varchar",
                     },
                     {
-                        name: "email",
+                        name: "cpf",
                         type: "varchar",
-                        isUnique: true,
                     },
                     {
-                        name: "login",
+                        name: "birth_date",
                         type: "varchar",
-                        isUnique: true,
                     },
                     {
-                        name: "password",
-                        type: "varchar"
-                    },
+                        name: "team_id",
+                        type: "varchar",
+                        isNullable: true,
+                    }
+                ],
+                foreignKeys: [
                     {
-                        name: "type",
-                        type: "number",
-                        default: 1,
+                        name: "fk_team",
+                        referencedTableName: "team",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["team_id"],
+                        onDelete: "CASCADE",
+                        onUpdate: "CASCADE",
                     }
                 ]
             })
@@ -42,7 +46,7 @@ export class ManagerMigration1628097348143 implements MigrationInterface{
     }
 
     public async down(queryRunner: QueryRunner): Promise<void>{
-        await queryRunner.dropTable("managers");
+        await queryRunner.dropTable("player");
     }
 
 }

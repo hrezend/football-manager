@@ -1,20 +1,28 @@
-import { Entity, Column, PrimaryColumn, JoinColumn, ManyToOne } from 'typeorm';
+import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { Team } from './Team';
 
-@Entity("players")
+@Entity("player")
 class Player{
 
     @PrimaryColumn()
-    readonly id: string;
+    id: string;
 
     @Column()
-    readonly name: string;
+    name: string;
 
     @Column()
-    readonly cpf: string;
+    cpf: string;
 
     @Column()
     birth_date: string;
+
+    @JoinColumn({name: 'team_id'})
+    @ManyToOne(() => Team, team => team.players)
+    team: Team;
+
+    @Column()
+    team_id: string;
 
     constructor(){
         if(!this.id){

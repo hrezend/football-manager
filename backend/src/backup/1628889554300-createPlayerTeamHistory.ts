@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class TeamPlayerMigration1628786769636 implements MigrationInterface {
+export class createPlayerTeamHistory1628889554300 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void> {
         await queryRunner.createTable(
             new Table({
-                name: "teams_players",
+                name: "player_team_history",
                 columns: [
                     {
                         name: "id",
@@ -30,24 +30,12 @@ export class TeamPlayerMigration1628786769636 implements MigrationInterface {
                         name: "finished_at",
                         type: "timestamp",
                         isNullable: true,
-                    },
-                    {
-                        name: "active",
-                        type: "boolean",
                     }
                 ],
                 foreignKeys:[
                     {
-                        name: "fk_team",
-                        referencedTableName: "teams",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["team_id"],
-                        onDelete: "CASCADE",
-                        onUpdate: "CASCADE",
-                    },
-                    {
                         name: "fk_player",
-                        referencedTableName: "players",
+                        referencedTableName: "player",
                         referencedColumnNames: ["id"],
                         columnNames: ["player_id"],
                         onDelete: "CASCADE",
@@ -59,7 +47,7 @@ export class TeamPlayerMigration1628786769636 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void> {
-        await queryRunner.dropTable("teams_players");
+        await queryRunner.dropTable("player_team_history");
     }
 
 }

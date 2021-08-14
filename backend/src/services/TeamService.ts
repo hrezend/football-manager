@@ -25,18 +25,23 @@ class TeamService{
 
         const team = this.teamRepository.create({name, founded_at});
         await this.teamRepository.save(team);
+
         return team;
     }
 
     async showAllTeams(){
         const allTeams = await this.teamRepository.find();
+        
         return allTeams;
     }
 
-    async showPlayersOfATeam(team_id: string){
-        //const activePlayers = await this.teamRepository.query(`select players.name from players left join teams_players on players.id = teams_players.player_id left join teams on teams_players.team_id = teams.id where teams_players.active = true and teams_players.team_id = ${team_id}`);
-        const activePlayers = await this.teamRepository.createQueryBuilder("player").leftJoinAndSelect("player.id", "teams_players.player_id");
-        return activePlayers;
+    async showPlayers(team_id: string){
+        const allPlayers = await this.teamRepository.find({
+            where: {id: team_id},
+            relations: ["players"]
+        });
+
+        return allPlayers;
     }
 
 }

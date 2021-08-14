@@ -2,12 +2,13 @@ import { Request, Response } from 'express';
 import { TeamService } from '../services/TeamService';
 
 class TeamController{
+    
     async create(request: Request, response: Response) : Promise<Response>{
         const { name, founded_at } = request.body;
         const teamService = new TeamService();
-        const team = await teamService.create({name, founded_at});
+        await teamService.create({name, founded_at});
 
-        return response.status(201).json({message: "A team was created with success.", team});
+        return response.status(201).json({message: "A team was created with success."});
     }
 
     async showAllTeams(request: Request, response: Response) : Promise<Response>{
@@ -17,12 +18,12 @@ class TeamController{
         return response.status(200).json(allTeams);
     }
 
-    async showPlayersOfATeam(request: Request, response: Response) : Promise<Response>{
-        const { team_id } = request.body;
+    async showPlayers(request: Request, response: Response) : Promise<Response>{
+        const { team_id } = request.params;
         const teamService = new TeamService();
-        const players = await teamService.showPlayersOfATeam(team_id);
+        const allPlayers = await teamService.showPlayers(team_id);
 
-        return response.status(200).json(players);
+        return response.status(200).json(allPlayers);
     }
     
 }

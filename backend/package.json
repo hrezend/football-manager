@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "ts-node-dev --transpile-only --ignore-watch node_modules src/server.ts",
     "typeorm": "ts-node-dev nome_modules/typeorm/cli.js",
+    "generatemigration": "ts-node-dev node_modules/typeorm/cli.js migration:generate",
+    "createmigration": "npx typeorm migration:create -n",
     "runmigration": "ts-node-dev node_modules/typeorm/cli.js migration:run",
     "test": "cross-env NODE_ENV=test jest -i"
   },

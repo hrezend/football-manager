@@ -1,17 +1,21 @@
-import { Entity, Column, PrimaryColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, OneToMany } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { Player } from './Player';
 
-@Entity("teams")
+@Entity("team")
 class Team{
 
     @PrimaryColumn()
-    readonly id: string;
+    id: string;
 
     @Column()
     name: string;
 
     @Column()
     founded_at: string;
+
+    @OneToMany(() => Player, players => players.team)
+    players: Player[];
 
     constructor(){
         if(!this.id){

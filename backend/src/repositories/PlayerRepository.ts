@@ -4,4 +4,4 @@ import { Player } from "../entities/Player";
 @EntityRepository(Player)
 class PlayerRepository extends Repository<Player>{}
 
-export {PlayerRepository}
+export { PlayerRepository }
