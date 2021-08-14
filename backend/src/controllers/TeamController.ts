@@ -4,9 +4,9 @@ import { TeamService } from '../services/TeamService';
 class TeamController{
     
     async create(request: Request, response: Response) : Promise<Response>{
-        const { name, founded_at } = request.body;
+        const { name, country, founded_at } = request.body;
         const teamService = new TeamService();
-        await teamService.create({name, founded_at});
+        await teamService.create({name, country, founded_at});
 
         return response.status(201).json({message: "A team was created with success."});
     }

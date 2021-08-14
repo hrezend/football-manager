@@ -12,7 +12,7 @@ class Player{
     name: string;
 
     @Column()
-    cpf: string;
+    nationality: string;
 
     @Column()
     birth_date: string;

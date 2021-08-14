@@ -12,6 +12,9 @@ class Team{
     name: string;
 
     @Column()
+    country: string;
+
+    @Column()
     founded_at: string;
 
     @OneToMany(() => Player, players => players.team)

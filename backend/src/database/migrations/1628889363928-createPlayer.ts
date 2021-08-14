@@ -18,7 +18,7 @@ export class createPlayer1628889363928 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "cpf",
+                        name: "nationality",
                         type: "varchar",
                     },
                     {

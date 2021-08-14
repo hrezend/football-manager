@@ -2,8 +2,6 @@ import { Router } from 'express';
 import { TeamController } from './controllers/TeamController';
 import { BindController } from './controllers/BindController';
 import { PlayerController } from './controllers/PlayerController';
-//import { ChangelogController } from './controllers/ChangelogController';
-//import { TeamPlayerController } from './controllers/TeamPlayerController';
 
 const router = Router();
 
@@ -19,12 +17,5 @@ router.post('/player/create', playerController.create);
 const bindController = new BindController();
 router.post('/bind/player/team/create', bindController.bindPlayerToTeam);
 router.post('/bind/player/team/delete', bindController.unbindPlayerToTeam);
-//router.post('/team/player/unbind', teamPlayerController.unbindTeamPlayer);
-
-//const managerController = new ManagerController();
-//router.post('/manager/create', managerController.create);
-
-//const changelogController = new ChangelogController();
-//router.get('/changelogs', changelogController.showAllChangelogs);
 
 export { router };

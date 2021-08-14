@@ -18,6 +18,10 @@ export class createTeam1628889541853 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "country",
+                        type: "varchar",
+                    },
+                    {
                         name: "founded_at",
                         type: "varchar",
                     },
