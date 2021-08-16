@@ -5,7 +5,7 @@ import { TeamRepository } from "../repositories/TeamRepository";
 
 interface ITeam{
     name: string;
-    country: string;
+    headquarters: string;
     founded_at: string;
 }
 
@@ -17,14 +17,14 @@ class TeamService{
         this.teamRepository = getCustomRepository(TeamRepository);
     }
 
-    async create({name, country, founded_at}:ITeam){
+    async create({name, headquarters, founded_at}:ITeam){
         const nameAlreadyUsing = await this.teamRepository.findOne({name});
 
         if(nameAlreadyUsing){
             throw new AppError("Team already using this name.", 400);
         }
 
-        const team = this.teamRepository.create({name, country, founded_at});
+        const team = this.teamRepository.create({name, headquarters, founded_at});
         await this.teamRepository.save(team);
 
         return team;

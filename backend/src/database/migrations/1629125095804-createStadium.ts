@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class createPlayer1628889363928 implements MigrationInterface {
+export class createStadium1629125095804 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void>{
         await queryRunner.createTable(
             new Table({
-                name: "player",
+                name: "stadium",
                 columns: [
                     {
                         name: "id",
@@ -18,35 +18,37 @@ export class createPlayer1628889363928 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "natural_from",
-                        type: "varchar",
+                        name: "capacity",
+                        type: "integer",
+                        isNullable: true,
                     },
                     {
-                        name: "birth_date",
-                        type: "varchar",
-                    },
-                    {
-                        name: "team_id",
+                        name: "city",
                         type: "varchar",
                         isNullable: true,
-                    }
-                ],
-                foreignKeys: [
+                    },
                     {
-                        name: "fk_team",
-                        referencedTableName: "team",
-                        referencedColumnNames: ["id"],
-                        columnNames: ["team_id"],
-                        onDelete: "CASCADE",
-                        onUpdate: "CASCADE",
-                    }
+                        name: "state",
+                        type: "varchar",
+                        isNullable: true,
+                    },
+                    {
+                        name: "country",
+                        type: "varchar",
+                        isNullable: true,
+                    },
+                    {
+                        name: "founded_at",
+                        type: "varchar",
+                        isNullable: true,
+                    },
                 ]
             })
         );
     }
 
     public async down(queryRunner: QueryRunner): Promise<void>{
-        await queryRunner.dropTable("player");
+        await queryRunner.dropTable("stadium");
     }
 
 }

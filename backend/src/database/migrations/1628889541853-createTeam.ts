@@ -18,13 +18,28 @@ export class createTeam1628889541853 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
-                        name: "country",
+                        name: "headquarters",
                         type: "varchar",
                     },
                     {
                         name: "founded_at",
                         type: "varchar",
                     },
+                    {
+                        name: "stadium_id",
+                        type: "varchar",
+                        isNullable: true,
+                    },
+                ],
+                foreignKeys: [
+                    {
+                        name: "fk_stadium",
+                        referencedTableName: "stadium",
+                        referencedColumnNames: ["id"],
+                        columnNames: ["stadium_id"],
+                        onDelete: "CASCADE",
+                        onUpdate: "CASCADE",
+                    }
                 ]
             })
         );
