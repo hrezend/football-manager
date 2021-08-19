@@ -18,6 +18,18 @@ export class createPlayer1628889363928 implements MigrationInterface {
                         type: "varchar",
                     },
                     {
+                        name: "height",
+                        type: "integer",
+                    },
+                    {
+                        name: "shirt_number",
+                        type: "integer",
+                    },
+                    {
+                        name: "favorite_foot",
+                        type: "varchar",
+                    },
+                    {
                         name: "natural_from",
                         type: "varchar",
                     },

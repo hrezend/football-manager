@@ -6,6 +6,9 @@ import { nameValidator  } from '../utils/validators/Validators';
 
 interface IPlayer{
     name: string;
+    height: Number;
+    shirt_number: Number;
+    favorite_foot: string;
     natural_from: string;
     birth_date: string;
 }
@@ -18,7 +21,7 @@ class PlayerService{
         this.playerRepository = getCustomRepository(PlayerRepository);
     }
 
-    async create({name, birth_date, natural_from}:IPlayer){
+    async create({name, height, shirt_number, favorite_foot, natural_from, birth_date}:IPlayer){
         const playerAlreadyExists = await this.playerRepository.findOne({name});
 
         if(playerAlreadyExists){
@@ -27,7 +30,7 @@ class PlayerService{
 
         const nameValidatted = nameValidator(name);
 
-        const player = this.playerRepository.create({name: nameValidatted, natural_from, birth_date});
+        const player = this.playerRepository.create({name: nameValidatted, height, shirt_number, favorite_foot, natural_from, birth_date});
         await this.playerRepository.save(player);
         
         return player;

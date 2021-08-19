@@ -4,9 +4,9 @@ import { PlayerService } from '../services/PlayerService';
 class PlayerController{
 
     async create(request: Request, response: Response) : Promise<Response>{
-        const {name, natural_from, birth_date} = request.body;
+        const {name, height, shirt_number, favorite_foot, natural_from, birth_date} = request.body;
         const playerService = new PlayerService();
-        await playerService.create({name, natural_from, birth_date});
+        await playerService.create({name, height, shirt_number, favorite_foot, natural_from, birth_date});
 
         return response.status(201).json({message: "A player was created with success."});
     }

@@ -12,10 +12,19 @@ class Player{
     name: string;
 
     @Column()
+    height: Number;
+
+    @Column()
+    shirt_number: Number;
+
+    @Column()
     natural_from: string;
 
     @Column()
     birth_date: string;
+
+    @Column()
+    favorite_foot: string;
 
     @JoinColumn({name: 'team_id'})
     @ManyToOne(() => Team, team => team.players)
