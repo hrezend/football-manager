@@ -18,18 +18,18 @@ class TeamController{
         return response.status(200).json(allTeams);
     }
 
-    async showTeamByName(request: Request, response: Response) : Promise<Response>{
-        const { name } = request.params;
+    async showTeamByID(request: Request, response: Response) : Promise<Response>{
+        const { team_id } = request.body;
         const teamService = new TeamService();
-        const team = await teamService.showTeamByName(name);
+        const team = await teamService.showTeamByID(team_id);
 
         return response.status(200).json(team);
     }
 
     async showPlayersOfATeam(request: Request, response: Response) : Promise<Response>{
-        const { name } = request.params;
+        const { team_id } = request.body;
         const teamService = new TeamService();
-        const allPlayers = await teamService.showPlayersOfATeam(name);
+        const allPlayers = await teamService.showPlayersOfATeam(team_id);
 
         return response.status(200).json(allPlayers);
     }

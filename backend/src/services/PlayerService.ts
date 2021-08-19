@@ -42,6 +42,15 @@ class PlayerService{
         return allPlayers;
     }
 
+    async showPlayerByID(player_id: string){
+        const player = await this.playerRepository.find({
+            where: {id: player_id},
+            relations: ["position"]
+        });
+
+        return player;
+    }
+
 }
 
 export { PlayerService }

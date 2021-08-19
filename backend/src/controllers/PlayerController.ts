@@ -12,10 +12,18 @@ class PlayerController{
     }
 
     async showAllPlayers(request: Request, response: Response) : Promise<Response>{
-        const teamService = new PlayerService();
-        const allPlayers = await teamService.showAllPlayers();
+        const playerService = new PlayerService();
+        const allPlayers = await playerService.showAllPlayers();
 
         return response.status(200).json(allPlayers);
+    }
+
+    async showPlayerByID(request: Request, response: Response) : Promise<Response>{
+        const { player_id } = request.body;
+        const playerService = new PlayerService();
+        const player = await playerService.showPlayerByID(player_id);
+
+        return response.status(200).json(player);
     }
 
 }

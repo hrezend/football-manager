@@ -9,12 +9,13 @@ const router = Router();
 const teamController = new TeamController();
 router.get('/teams', teamController.showAllTeams);
 router.post('/team/create', teamController.create);
-router.get('/team/players/:name', teamController.showPlayersOfATeam);
-router.get('/team/:name', teamController.showTeamByName);
+router.post('/team/players', teamController.showPlayersOfATeam);
+router.post('/team/show', teamController.showTeamByID);
 
 const playerController = new PlayerController();
 router.get('/players', playerController.showAllPlayers);
 router.post('/player/create', playerController.create);
+router.post('/player/show', playerController.showPlayerByID);
 
 const bindController = new BindController();
 router.post('/bind/player/team/create', bindController.bindPlayerToTeam);

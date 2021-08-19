@@ -1,5 +1,6 @@
-import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn } from 'typeorm';
+import { Entity, Column, PrimaryColumn, ManyToOne, JoinColumn, OneToMany } from 'typeorm';
 import { v4 as uuid } from 'uuid';
+import { Position } from './Position';
 import { Team } from './Team';
 
 @Entity("player")
@@ -32,6 +33,9 @@ class Player{
 
     @Column()
     team_id: string;
+
+    @OneToMany(() => Position, positions => positions.player)
+    positions: Position[];
 
     constructor(){
         if(!this.id){
