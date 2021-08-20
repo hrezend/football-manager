@@ -39,19 +39,10 @@ class TeamService{
     async showTeamByID(team_id: string){
         const allTeams = await this.teamRepository.find({
             where: {id: team_id},
-            relations: ["stadium"]
+            relations: ["stadium", "players"]
         });
         
         return allTeams;
-    }
-
-    async showPlayersOfATeam(team_id: string){
-        const allPlayers = await this.teamRepository.find({
-            where: {id: team_id},
-            relations: ["players"]
-        });
-
-        return allPlayers;
     }
 
 }

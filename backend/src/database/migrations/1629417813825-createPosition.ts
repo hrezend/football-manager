@@ -1,11 +1,11 @@
 import {MigrationInterface, QueryRunner, Table} from "typeorm";
 
-export class createTeam1628889541853 implements MigrationInterface {
+export class createPosition1629417813825 implements MigrationInterface {
 
     public async up(queryRunner: QueryRunner): Promise<void>{
         await queryRunner.createTable(
             new Table({
-                name: "team",
+                name: "position",
                 columns: [
                     {
                         name: "id",
@@ -14,29 +14,24 @@ export class createTeam1628889541853 implements MigrationInterface {
                         isUnique: true,
                     },
                     {
-                        name: "name",
+                        name: "description",
                         type: "varchar",
                     },
                     {
-                        name: "headquarters",
-                        type: "varchar",
+                        name: "main",
+                        type: "boolean",
                     },
                     {
-                        name: "founded_at",
-                        type: "varchar",
-                    },
-                    {
-                        name: "stadium_id",
+                        name: "player_id",
                         type: "uuid",
-                        isNullable: true,
-                    },
+                    }
                 ],
                 foreignKeys: [
                     {
-                        name: "fk_stadium",
-                        referencedTableName: "stadium",
+                        name: "fk_player",
+                        referencedTableName: "player",
                         referencedColumnNames: ["id"],
-                        columnNames: ["stadium_id"],
+                        columnNames: ["player_id"],
                         onDelete: "CASCADE",
                         onUpdate: "CASCADE",
                     }
@@ -46,7 +41,7 @@ export class createTeam1628889541853 implements MigrationInterface {
     }
 
     public async down(queryRunner: QueryRunner): Promise<void>{
-        await queryRunner.dropTable("team");
+        await queryRunner.dropTable("stadium");
     }
 
 }

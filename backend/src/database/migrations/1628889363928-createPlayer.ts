@@ -39,7 +39,7 @@ export class createPlayer1628889363928 implements MigrationInterface {
                     },
                     {
                         name: "team_id",
-                        type: "varchar",
+                        type: "uuid",
                         isNullable: true,
                     }
                 ],

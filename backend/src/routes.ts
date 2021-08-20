@@ -9,7 +9,6 @@ const router = Router();
 const teamController = new TeamController();
 router.get('/teams', teamController.showAllTeams);
 router.post('/team/create', teamController.create);
-router.post('/team/players', teamController.showPlayersOfATeam);
 router.post('/team/show', teamController.showTeamByID);
 
 const playerController = new PlayerController();
